@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:scouting2024/pages/home.dart';
 
@@ -23,7 +22,6 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark().copyWith(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         textTheme: Typography().white.apply(fontFamily: 'SofiaSans'),
-        useMaterial3: true,
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(
           color: Colors.red,
@@ -34,7 +32,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.dark, 
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

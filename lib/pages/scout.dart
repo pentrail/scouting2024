@@ -232,7 +232,7 @@ class _ScoutPageState extends State<ScoutPage> {
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-                child: Dropdown203(options: endingStages, selected: endingStage, hintText: "SELECT",
+                child: Dropdown203(options: endingStages, selected: endingStage, hintText: "Select Ending Stage",
                 callback: (p0) {
                   setState(() {
                     endingStage = p0;
@@ -240,7 +240,7 @@ class _ScoutPageState extends State<ScoutPage> {
                 }) 
               ),
               
-              Checkbox203(text: "Note scored in TRAP", field: noteInTrap,
+              Checkbox203(text: "Note Scored In TRAP", field: noteInTrap,
                 callback: (p0) {
                   setState(() {
                     noteInTrap = p0;
@@ -248,7 +248,7 @@ class _ScoutPageState extends State<ScoutPage> {
                 }
               ),
 
-              Checkbox203(text: "Robot fell off STAGE", field: robotFellOffStage,
+              Checkbox203(text: "Robot Fell Off STAGE", field: robotFellOffStage,
                 callback: (p0) {
                   setState(() {
                     robotFellOffStage = p0;

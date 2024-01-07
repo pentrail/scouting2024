@@ -38,6 +38,12 @@ dependencies:
   qr_flutter: ^4.1.0
   restart_app: ^1.2.1
   shared_preferences: ^2.2.2
+  screenshot: ^2.1.0
+  image_gallery_saver: ^2.0.3
+  native_screenshot: ^1.0.0
+  permission_handler: ^11.1.0
+  path_provider: ^2.1.1
+  widget_screenshot: ^0.0.9
 
 dev_dependencies:
   flutter_test:
@@ -69,8 +75,6 @@ flutter:
 
   assets:
     - assets/frc203.png
-    - assets/background.png
-    - assets/noise.png
     
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -41,7 +41,7 @@ class _Checkbox203State extends State<Dropdown203> {
           dropdownColor: Colors.red,
           // underline: Container(),
           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          hint: Text(widget.hintText, style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold)),
+          hint: Text(widget.hintText, style: const TextStyle(color: Colors.white70, fontWeight: FontWeight.bold)),
           
           onChanged: (String? value) {
             setState(() {
