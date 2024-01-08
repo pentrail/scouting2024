@@ -10,7 +10,7 @@ DateTime tsdate = DateTime.fromMillisecondsSinceEpoch(timestamp);
 String datetime = "${tsdate.month}/${tsdate.day}/${tsdate.year}  ${tsdate.hour}:${tsdate.minute}";
 
 class Scan extends StatefulWidget {
-  const Scan({super.key, required this.autoLeftStartingZone, required this.autoAmpNotesScored, required this.autoAmpNotesMissed, required this.autoSpeakerNotesScored, required this.autoSpeakerNotesMissed, required this.teleNotesRetrievedSource, required this.teleNotesMissedSource, required this.teleAmpNotesScored, required this.teleAmpNotesMissed, required this.teleSpeakerNotesScored, required this.teleSpeakerNotesMissed, required this.teleBumps, required this.robotFellOver, required this.robotStoppedWorking, required this.endingStage, required this.noteInTrap, required this.robotFellOffStage, required this.rankingPoints, required this.allianceScore, required this.personalNotes, required this.scouterName, required this.teamNumber, required this.matchNumber, required this.robotNeverShowedUp});
+  const Scan({super.key, required this.autoLeftStartingZone, required this.autoAmpNotesScored, required this.autoAmpNotesMissed, required this.autoSpeakerNotesScored, required this.autoSpeakerNotesMissed, required this.teleNotesRetrievedSource, required this.teleNotesRetrievedFloor, required this.teleAmpNotesScored, required this.teleAmpNotesMissed, required this.teleSpeakerNotesScored, required this.teleSpeakerNotesMissed, required this.teleBumps, required this.robotFellOver, required this.robotStoppedWorking, required this.endingStage, required this.noteInTrap, required this.robotFellOffStage, required this.rankingPoints, required this.allianceScore, required this.personalNotes, required this.scouterName, required this.teamNumber, required this.matchNumber, required this.robotNeverShowedUp});
 
   final String? scouterName;
   final String? teamNumber;
@@ -21,7 +21,7 @@ class Scan extends StatefulWidget {
   final String autoSpeakerNotesScored;
   final String autoSpeakerNotesMissed;
   final String teleNotesRetrievedSource;
-  final String teleNotesMissedSource;
+  final String teleNotesRetrievedFloor;
   final String teleAmpNotesScored;
   final String teleAmpNotesMissed;
   final String teleSpeakerNotesScored;
@@ -87,7 +87,7 @@ class _ScanState extends State<Scan> {
                 widget.autoSpeakerNotesMissed + '*' +
                 widget.autoLeftStartingZone + '*' +
                 widget.teleNotesRetrievedSource + '*' +
-                widget.teleNotesMissedSource + '*' +
+                widget.teleNotesRetrievedFloor + '*' +
                 widget.teleAmpNotesScored + '*' +
                 widget.teleAmpNotesMissed + '*' +
                 widget.teleSpeakerNotesScored + '*' +

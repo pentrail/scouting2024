@@ -22,7 +22,7 @@ int autoSpeakerNotesScored = 0;
 int autoSpeakerNotesMissed = 0;
 
 int teleNotesRetrievedSource = 0;
-int teleNotesMissedSource = 0;
+int teleNotesRetrievedFloor = 0;
 int teleAmpNotesScored = 0;
 int teleAmpNotesMissed = 0;
 int teleSpeakerNotesScored = 0;
@@ -148,14 +148,14 @@ class _ScoutPageState extends State<ScoutPage> {
                 }),
               ),
 
-              FormText203(text: "Notes Missed From SOURCE"),
+              FormText203(text: "Notes Retrieved From FLOOR"),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-                child: Increment203(counter: teleNotesMissedSource,
+                child: Increment203(counter: teleNotesRetrievedFloor,
                 callback: (p0) {
                   setState(() {
-                    teleNotesMissedSource = p0;
+                    teleNotesRetrievedFloor = p0;
                   });
                 }),
               ),
@@ -368,7 +368,7 @@ class _ScoutPageState extends State<ScoutPage> {
                                 autoSpeakerNotesScored: autoSpeakerNotesScored.toString(),
                                 autoSpeakerNotesMissed: autoSpeakerNotesMissed.toString(),
                                 teleNotesRetrievedSource: teleNotesRetrievedSource.toString(),
-                                teleNotesMissedSource: teleNotesMissedSource.toString(),
+                                teleNotesRetrievedFloor: teleNotesRetrievedFloor.toString(),
                                 teleAmpNotesScored: teleAmpNotesScored.toString(),
                                 teleAmpNotesMissed: teleAmpNotesMissed.toString(),
                                 teleSpeakerNotesScored: teleSpeakerNotesScored.toString(),
