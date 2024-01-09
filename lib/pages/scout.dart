@@ -380,7 +380,7 @@ class _ScoutPageState extends State<ScoutPage> {
                                 endingStage: endingStage,
                                 noteInTrap: (noteInTrap ? "TRUE" : "FALSE"),
                                 robotFellOffStage: (robotFellOffStage ? "TRUE" : "FALSE"),
-                                rankingPoints: rankingPoints.toString(),
+                                rankingPoints: rankingPoints.toInt().toString(),
                                 allianceScore: allianceScore.text,
                                 personalNotes: personalNotes.text
                               )),
