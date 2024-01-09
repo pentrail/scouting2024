@@ -52,6 +52,8 @@ class _ScanState extends State<Scan> {
     final appBar = AppBar(); //Need to instantiate this here to get its size
     final bodyHeight = MediaQuery.of(context).size.height - (appBar.preferredSize.height + MediaQuery.of(context).padding.top);   
 
+    final scanText = '${widget.matchNumber}*${widget.teamNumber!}*${widget.scouterName!}*${widget.allianceScore}*${widget.rankingPoints}*${widget.autoAmpNotesScored}*${widget.autoAmpNotesMissed}*${widget.autoSpeakerNotesScored}*${widget.autoSpeakerNotesMissed}*${widget.autoLeftStartingZone}*${widget.teleNotesRetrievedSource}*${widget.teleNotesRetrievedFloor}*${widget.teleAmpNotesScored}*${widget.teleAmpNotesMissed}*${widget.teleSpeakerNotesScored}*${widget.teleSpeakerNotesMissed}*${widget.teleBumps}*${widget.robotFellOver}*${widget.robotNeverShowedUp}*${widget.robotStoppedWorking}*${widget.endingStage!}*${widget.noteInTrap}*${widget.robotFellOffStage}*${widget.personalNotes}';
+
     return Scaffold(
       appBar: AppBar(
         title: Text("${widget.scouterName?.split(" ")[0]}'s Generated QR Code"),
@@ -76,30 +78,7 @@ class _ScanState extends State<Scan> {
               alignment: Alignment.center,
               child: QrImageView(
                 // ignore: prefer_interpolation_to_compose_strings
-                data: (widget.matchNumber + '*' +
-                widget.teamNumber! + '*' +
-                widget.scouterName! + '*' +
-                widget.allianceScore + '*' +
-                widget.rankingPoints + '*' +
-                widget.autoAmpNotesScored + '*' +
-                widget.autoAmpNotesMissed + '*' +
-                widget.autoSpeakerNotesScored + '*' +
-                widget.autoSpeakerNotesMissed + '*' +
-                widget.autoLeftStartingZone + '*' +
-                widget.teleNotesRetrievedSource + '*' +
-                widget.teleNotesRetrievedFloor + '*' +
-                widget.teleAmpNotesScored + '*' +
-                widget.teleAmpNotesMissed + '*' +
-                widget.teleSpeakerNotesScored + '*' +
-                widget.teleSpeakerNotesMissed + '*' +
-                widget.teleBumps + '*' +
-                widget.robotFellOver + '*' +
-                widget.robotNeverShowedUp + '*' +
-                widget.robotStoppedWorking + '*' +
-                widget.endingStage! + '*' +
-                widget.noteInTrap + '*' +
-                widget.robotFellOffStage + '*' +
-                widget.personalNotes),
+                data: (scanText),
                 version: QrVersions.auto,
                 padding: const EdgeInsets.all(30),
                 size: (MediaQuery.of(context).size.width * 0.78 > bodyHeight * 0.78 ? bodyHeight * 0.78 : MediaQuery.of(context).size.width * 0.78),
@@ -107,12 +86,21 @@ class _ScanState extends State<Scan> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 15, bottom: 10, right: 20, top: 20),
+              padding: const EdgeInsets.only(left: 15, bottom: 10, right: 15, top: 20),
               child: Text("(Match ${widget.matchNumber})\n$datetime",
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
+                )
+              )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10, bottom: 10, right: 10, top: 20),
+              child: Text(scanText,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 13.0,
                 )
               )
             ),
