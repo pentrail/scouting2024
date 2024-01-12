@@ -15,7 +15,7 @@ const List<String> scouters = <String>[
   "Divine Onochie",
   "Dylan Huynh",
   "Dylan Russell",
-  "Edwin Escobar Castro",
+  "Edwin Escobar",
   "Eliana Santiago",
   "Elikeriel Rodriguez",
   "Emily Shewell",
