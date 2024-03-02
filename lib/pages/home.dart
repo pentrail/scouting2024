@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
     }
     if (prefs.containsKey("match")) {
       setState(() {
-        matchNumber.text = (prefs.getInt("match")! + 1).toString();
+        matchNumber.text = (prefs.getInt("match")).toString();
       });
     }
     if (prefs.containsKey("robot")) {
@@ -159,7 +159,6 @@ class _HomePageState extends State<HomePage> {
                           if (_formKey.currentState!.validate()) {
                             SharedPreferences prefs = await SharedPreferences.getInstance();
                             prefs.setString('name', scouterName!);
-                            prefs.setInt('match', int.parse(matchNumber.text));
                             Navigator.push(
                               context,
                               MaterialPageRoute(

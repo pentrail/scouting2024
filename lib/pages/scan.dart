@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:restart_app/restart_app.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:widget_screenshot/widget_screenshot.dart';
 
 int timestamp = DateTime.now().millisecondsSinceEpoch;
@@ -118,6 +119,9 @@ class _ScanState extends State<Scan> {
                     padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.fromLTRB(50, 25, 50, 25))
                   ),
                   onPressed: () async {
+
+                    final prefs = await SharedPreferences.getInstance();
+                    prefs.setInt('match', (int.parse(widget.matchNumber)) + 1);
 
                     WidgetShotRenderRepaintBoundary repaintBoundary =
                     _shotKey.currentContext!.findRenderObject() as WidgetShotRenderRepaintBoundary;

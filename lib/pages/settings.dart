@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restart_app/restart_app.dart';
 import 'package:scouting2024/widgets/formText.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -70,6 +71,30 @@ class _SettingsState extends State<Settings> {
                 hintText: 'Please contact the scouting leader if this is blank',
               ),
             ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            margin: const EdgeInsets.all(50),
+            child: ButtonTheme(
+              minWidth: 500,
+              height: 100,
+              child: FilledButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  )),
+                  padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.fromLTRB(50, 25, 50, 25))
+                ),
+                onPressed: () async {
+                  final prefs = await SharedPreferences.getInstance();
+                  prefs.setString('robot', assignedRobot.text);
+                  Restart.restartApp();
+                },
+                child: const Text('Save',
+                  style: TextStyle(fontSize: 25)
+                ),
+              )
+            )
           ),
         ],
       )
